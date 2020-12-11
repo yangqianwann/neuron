@@ -9,3 +9,4 @@ output.py: Once we get the output data, this file is used to plot the images.
 metrics_test.py: This file is used for validation and test data, to give the predicted labels with watershed lines and every centroid of the original labels and predicted labels. 
 centroid.py: This file is used to compare the distances among corresponding centroids and give a intuitive result for the prediction. 
 overlapping-roi-segmentation.ipynb: This file is used to segment overlapping labels via the watershed algorithm. It also finds centroids of all labels in an image. 
+label_generator_with_idx.m: This code generates a training/testing set by cropping many images with dimension 256 by 256 from a raw figure with dimension 1152 by 1152.
