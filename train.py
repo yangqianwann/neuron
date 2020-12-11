@@ -13,7 +13,6 @@ from torchvision import transforms
 from torch.optim import lr_scheduler
 import time
 from torch.utils import data
-from utils import str2bool
 from torch.autograd import Variable
 import matplotlib.pyplot as plt
 from PIL import Image
@@ -51,8 +50,6 @@ def parse_args():
                         help='momentum')
     parser.add_argument('--weight-decay', default=1e-4, type=float,
                         help='weight decay')
-    parser.add_argument('--nesterov', default=False, type=str2bool,
-                        help='nesterov')
 
     args = parser.parse_args()
 
@@ -190,7 +187,7 @@ def main():
 
     # create model
     model = unet_2d()
-    #model = model.cuda()
+    model = model.cuda()
 
     if args.optimizer == 'Adam':
         optimizer = optim.Adam(filter(lambda p: p.requires_grad, model.parameters()), lr=args.lr)

@@ -26,7 +26,7 @@ class VGGBlock(nn.Module):
 
 
 class UNet(nn.Module):
-    def __init__(self, num_classes, input_channels=3):
+    def __init__(self, num_classes=2, input_channels=1):
         super().__init__()
 
         nb_filter = [16, 32, 64, 128, 256]
@@ -70,7 +70,7 @@ class UNet(nn.Module):
 
 
 class NestedUNet(nn.Module):
-    def __init__(self, num_classes, input_channels=3, deep_supervision=False):
+    def __init__(self, num_classes=2, input_channels=1, deep_supervision=False):
         super().__init__()
 
         nb_filter = [16, 32, 64, 128, 256]
